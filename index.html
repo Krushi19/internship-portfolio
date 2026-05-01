@@ -7,88 +7,111 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #F5F7FF;
-  --bg2: #FFFFFF;
-  --text: #0F0F2D;
-  --muted: #6B7280;
-  --border: rgba(0,0,0,0.07);
-  --g1: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
-  --g2: linear-gradient(135deg, #F093FB 0%, #F5576C 100%);
-  --g3: linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%);
-  --g4: linear-gradient(135deg, #43E97B 0%, #38F9D7 100%);
-  --g5: linear-gradient(135deg, #FA709A 0%, #FEE140 100%);
-  --purple: #667EEA;
-  --pink: #F5576C;
-  --blue: #4FACFE;
+  --bg: #0B0F1A;
+  --bg2: #111827;
+  --card: #151D2E;
+  --card2: #1A2340;
+  --text: #E8ECF4;
+  --muted: #7A8599;
+  --border: rgba(255,255,255,0.06);
+  --border2: rgba(255,255,255,0.1);
+  --accent: #06D6A0;
+  --accent2: #22D3EE;
+  --pink: #F472B6;
+  --amber: #FBBF24;
+  --violet: #A78BFA;
+  --g1: linear-gradient(135deg, #06D6A0 0%, #22D3EE 100%);
+  --g2: linear-gradient(135deg, #F472B6 0%, #FB923C 100%);
+  --g3: linear-gradient(135deg, #22D3EE 0%, #818CF8 100%);
+  --g4: linear-gradient(135deg, #FBBF24 0%, #F472B6 100%);
+  --g5: linear-gradient(135deg, #A78BFA 0%, #F472B6 100%);
+  --glow: 0 0 60px rgba(6,214,160,0.15);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+a{color:inherit;}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 5%;background:rgba(245,247,255,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 5%;background:rgba(11,15,26,0.82);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);}
 .nav-logo{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .nav-links{display:flex;gap:1.8rem;}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:600;letter-spacing:.02em;transition:color .2s;}
-.nav-links a:hover{color:var(--purple);}
-.nav-cta{padding:.5rem 1.4rem;border-radius:100px;background:var(--g1);color:#fff;font-size:.83rem;font-weight:700;text-decoration:none;transition:opacity .2s,transform .2s;}
-.nav-cta:hover{opacity:.85;transform:translateY(-1px);}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.83rem;font-weight:600;letter-spacing:.02em;transition:color .2s;}
+.nav-links a:hover{color:var(--accent);}
+.nav-cta{padding:.5rem 1.4rem;border-radius:100px;background:var(--g1);color:#0B0F1A !important;font-size:.83rem;font-weight:700;text-decoration:none;transition:opacity .2s,transform .2s;}
+.nav-cta:hover{opacity:.88;transform:translateY(-1px);}
 
 /* HERO */
-#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 5rem;background:linear-gradient(135deg,#EEF2FF 0%,#FDF4FF 50%,#EFF9FF 100%);position:relative;overflow:hidden;}
-.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.2;pointer-events:none;}
-.orb1{width:500px;height:500px;background:#667EEA;top:-120px;left:-120px;animation:drift 10s ease-in-out infinite;}
-.orb2{width:400px;height:400px;background:#F093FB;bottom:-80px;right:-80px;animation:drift 12s ease-in-out infinite reverse;}
-.orb3{width:280px;height:280px;background:#4FACFE;top:55%;left:55%;animation:drift 9s ease-in-out infinite 2s;}
-@keyframes drift{0%,100%{transform:translate(0,0);}50%{transform:translate(18px,-18px);}}
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 5rem;background:radial-gradient(ellipse at 30% 20%,rgba(6,214,160,0.07) 0%,transparent 50%),radial-gradient(ellipse at 70% 80%,rgba(34,211,238,0.06) 0%,transparent 50%),radial-gradient(ellipse at 50% 50%,rgba(167,139,250,0.04) 0%,transparent 60%),var(--bg);position:relative;overflow:hidden;}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.15;pointer-events:none;}
+.orb1{width:500px;height:500px;background:#06D6A0;top:-140px;left:-140px;animation:drift 10s ease-in-out infinite;}
+.orb2{width:400px;height:400px;background:#22D3EE;bottom:-100px;right:-100px;animation:drift 12s ease-in-out infinite reverse;}
+.orb3{width:300px;height:300px;background:#A78BFA;top:50%;left:55%;animation:drift 9s ease-in-out infinite 2s;}
+.orb4{width:200px;height:200px;background:#F472B6;top:30%;right:20%;animation:drift 11s ease-in-out infinite 1s;}
+@keyframes drift{0%,100%{transform:translate(0,0);}50%{transform:translate(20px,-20px);}}
 
-.chip{display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border);border-radius:100px;padding:.4rem 1.1rem;font-size:.77rem;font-weight:700;letter-spacing:.06em;color:var(--purple);margin-bottom:2rem;box-shadow:0 4px 20px rgba(102,126,234,.1);animation:fadeUp .7s ease both;}
-.chip-dot{width:7px;height:7px;border-radius:50%;background:#43E97B;box-shadow:0 0 6px #43E97B;}
+.grid-bg{position:absolute;inset:0;background-image:
+  linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);
+  background-size:60px 60px;pointer-events:none;}
 
-.hero-name{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,8vw,6.2rem);font-weight:800;line-height:1.0;background:linear-gradient(135deg,#667EEA 0%,#F5576C 50%,#4FACFE 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:fadeUp .8s .1s ease both;}
+.chip{display:inline-flex;align-items:center;gap:.5rem;background:rgba(6,214,160,0.08);border:1px solid rgba(6,214,160,0.2);border-radius:100px;padding:.4rem 1.1rem;font-size:.77rem;font-weight:700;letter-spacing:.06em;color:var(--accent);margin-bottom:2rem;animation:fadeUp .7s ease both;}
+.chip-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);}
+
+.hero-name{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,8vw,6.2rem);font-weight:800;line-height:1.0;background:linear-gradient(135deg,#06D6A0 0%,#22D3EE 40%,#A78BFA 70%,#F472B6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:fadeUp .8s .1s ease both;}
 .hero-sub{font-size:clamp(1rem,2vw,1.25rem);color:var(--muted);margin-top:.8rem;font-weight:500;animation:fadeUp .8s .15s ease both;}
-.hero-sub strong{color:var(--purple);}
-.hero-desc{max-width:600px;margin:1.5rem auto 0;font-size:.98rem;line-height:1.9;color:var(--muted);animation:fadeUp .8s .2s ease both;}
+.hero-sub strong{color:var(--accent);}
+.hero-desc{max-width:620px;margin:1.5rem auto 0;font-size:.98rem;line-height:1.9;color:var(--muted);animation:fadeUp .8s .2s ease both;}
 
 .hero-pills{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:2rem;animation:fadeUp .8s .25s ease both;}
-.pill{padding:.38rem 1rem;border-radius:100px;font-size:.78rem;font-weight:600;border:1.5px solid transparent;}
-.pill-1{background:linear-gradient(white,white) padding-box,var(--g1) border-box;color:#667EEA;}
-.pill-2{background:linear-gradient(white,white) padding-box,var(--g3) border-box;color:#2B8EE0;}
-.pill-3{background:linear-gradient(white,white) padding-box,var(--g2) border-box;color:#F5576C;}
-.pill-4{background:linear-gradient(white,white) padding-box,var(--g4) border-box;color:#1A9E58;}
-.pill-5{background:linear-gradient(white,white) padding-box,var(--g5) border-box;color:#E05080;}
+.pill{padding:.38rem 1rem;border-radius:100px;font-size:.78rem;font-weight:600;border:1.5px solid transparent;text-decoration:none;display:inline-block;transition:all .2s;}
+.pill:hover{transform:translateY(-2px);}
+.pill-1{background:rgba(6,214,160,0.08);border-color:rgba(6,214,160,0.25);color:var(--accent);}
+.pill-2{background:rgba(34,211,238,0.08);border-color:rgba(34,211,238,0.25);color:var(--accent2);}
+.pill-3{background:rgba(244,114,182,0.08);border-color:rgba(244,114,182,0.25);color:var(--pink);}
+.pill-4{background:rgba(251,191,36,0.08);border-color:rgba(251,191,36,0.25);color:var(--amber);}
+.pill-5{background:rgba(167,139,250,0.08);border-color:rgba(167,139,250,0.25);color:var(--violet);}
 
 .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.5rem;animation:fadeUp .8s .3s ease both;}
-.btn-main{padding:.82rem 2.1rem;border-radius:100px;background:var(--g1);color:#fff;font-weight:700;font-size:.97rem;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 28px rgba(102,126,234,.3);}
-.btn-main:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(102,126,234,.4);}
-.btn-ghost{padding:.82rem 2.1rem;border-radius:100px;border:2px solid var(--border);background:#fff;color:var(--text);font-weight:700;font-size:.97rem;text-decoration:none;transition:all .2s;}
-.btn-ghost:hover{border-color:var(--purple);color:var(--purple);}
+.btn-main{padding:.82rem 2.1rem;border-radius:100px;background:var(--g1);color:#0B0F1A;font-weight:700;font-size:.97rem;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 30px rgba(6,214,160,0.25);}
+.btn-main:hover{transform:translateY(-3px);box-shadow:0 16px 45px rgba(6,214,160,0.35);}
+.btn-ghost{padding:.82rem 2.1rem;border-radius:100px;border:2px solid var(--border2);background:transparent;color:var(--text);font-weight:700;font-size:.97rem;text-decoration:none;transition:all .2s;}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
 
 /* COMMON */
 .container{max-width:1160px;margin:0 auto;padding:0 5%;}
 .pad{padding:5.5rem 0;}
 .sec-head{text-align:center;margin-bottom:3.5rem;}
 .sec-tag{display:inline-block;padding:.32rem .95rem;border-radius:100px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.8rem;}
-.tp{background:rgba(102,126,234,.1);color:var(--purple);}
-.tpk{background:rgba(245,87,108,.1);color:#E04060;}
-.tb{background:rgba(79,172,254,.1);color:#2B8EE0;}
-.tg{background:rgba(67,233,123,.12);color:#1A9E58;}
-.to{background:rgba(250,112,154,.1);color:#D04070;}
+.ta{background:rgba(6,214,160,0.1);color:var(--accent);border:1px solid rgba(6,214,160,0.2);}
+.tc-tag{background:rgba(34,211,238,0.1);color:var(--accent2);border:1px solid rgba(34,211,238,0.2);}
+.tp{background:rgba(244,114,182,0.1);color:var(--pink);border:1px solid rgba(244,114,182,0.2);}
+.tam{background:rgba(251,191,36,0.1);color:var(--amber);border:1px solid rgba(251,191,36,0.2);}
+.tv{background:rgba(167,139,250,0.1);color:var(--violet);border:1px solid rgba(167,139,250,0.2);}
 .sec-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3.5vw,2.7rem);font-weight:800;line-height:1.15;}
-.gp{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.gpk{background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.gb{background:var(--g3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.gg{background:var(--g4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.ga{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.gc{background:var(--g3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.gp{background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.gam{background:var(--g4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.gv{background:var(--g5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+
+/* LINK STYLE */
+.link-card{cursor:pointer;text-decoration:none;display:block;}
+.link-card:hover .app-emoji{transform:scale(1.1);}
+.link-arrow{font-size:.75rem;opacity:0;transform:translateX(-6px);transition:all .25s;display:inline-block;margin-left:.3rem;}
+.link-card:hover .link-arrow{opacity:1;transform:translateX(0);}
+.tool-link{text-decoration:none;display:block;}
+.tool-link:hover .tc-emoji{transform:scale(1.12);}
 
 /* INTERNSHIP */
-#internship{background:#fff;}
+#internship{background:var(--bg2);}
 .int-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;}
-.int-card{background:var(--bg);border:1px solid var(--border);border-radius:22px;padding:2rem;transition:all .3s;}
-.int-card:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(102,126,234,.08);}
+.int-card{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:2rem;transition:all .3s;}
+.int-card:hover{transform:translateY(-5px);border-color:var(--border2);box-shadow:var(--glow);}
 .int-card-head{display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border);}
 .ic-ico{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
-.ici-p{background:rgba(102,126,234,.1);}
-.ici-pk{background:rgba(245,87,108,.1);}
+.ici-a{background:rgba(6,214,160,0.1);}
+.ici-p{background:rgba(244,114,182,0.1);}
 .int-card-head h3{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;}
 .irow{display:flex;gap:.7rem;margin-bottom:.8rem;align-items:flex-start;}
 .irow-ic{font-size:.95rem;flex-shrink:0;margin-top:.1rem;}
@@ -97,80 +120,83 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 /* APPS */
 #apps{background:var(--bg);}
-.apps-intro{background:#fff;border:1px solid var(--border);border-radius:22px;padding:1.8rem 2.2rem;margin-bottom:2.2rem;display:flex;align-items:center;gap:1.3rem;}
+.apps-intro{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:1.8rem 2.2rem;margin-bottom:2.2rem;display:flex;align-items:center;gap:1.3rem;}
 .ai-icon{font-size:2.4rem;flex-shrink:0;}
 .apps-intro p{color:var(--muted);line-height:1.8;font-size:.95rem;}
 .apps-intro strong{color:var(--text);}
 .apps-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.2rem;}
-.app-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:1.6rem 1rem;text-align:center;transition:all .3s;}
-.app-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.09);}
-.app-emoji{font-size:2.8rem;margin-bottom:.8rem;display:block;}
+.app-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:1.6rem 1rem;text-align:center;transition:all .3s;position:relative;overflow:hidden;}
+.app-card::after{content:'→';position:absolute;top:1rem;right:1rem;font-size:.85rem;color:var(--accent);opacity:0;transform:translate(-4px,4px);transition:all .25s;}
+.link-card:hover .app-card::after{opacity:1;transform:translate(0,0);}
+.app-card:hover{transform:translateY(-8px);border-color:rgba(6,214,160,0.25);box-shadow:0 20px 50px rgba(6,214,160,0.08);}
+.app-emoji{font-size:2.8rem;margin-bottom:.8rem;display:block;transition:transform .25s;}
 .app-name{font-family:'Syne',sans-serif;font-size:.92rem;font-weight:700;margin-bottom:.3rem;}
 .app-desc{font-size:.74rem;color:var(--muted);line-height:1.5;}
 .app-badge{display:inline-block;margin-top:.75rem;padding:.22rem .65rem;border-radius:100px;font-size:.67rem;font-weight:700;letter-spacing:.05em;}
-.ab1{background:rgba(102,126,234,.1);color:var(--purple);}
-.ab2{background:rgba(79,172,254,.1);color:#2B8EE0;}
-.ab3{background:rgba(67,233,123,.12);color:#1A9E58;}
-.ab4{background:rgba(250,112,154,.1);color:#D04070;}
-.ab5{background:rgba(245,87,108,.1);color:#E04060;}
+.ab1{background:rgba(6,214,160,0.1);color:var(--accent);}
+.ab2{background:rgba(34,211,238,0.1);color:var(--accent2);}
+.ab3{background:rgba(251,191,36,0.1);color:var(--amber);}
+.ab4{background:rgba(244,114,182,0.1);color:var(--pink);}
+.ab5{background:rgba(167,139,250,0.1);color:var(--violet);}
 
 /* PROJECT */
-#project{background:#fff;}
-.proj-banner{background:linear-gradient(135deg,rgba(102,126,234,.07),rgba(240,147,251,.06),rgba(79,172,254,.07));border:1px solid rgba(102,126,234,.13);border-radius:26px;padding:2.5rem;margin-bottom:1.8rem;}
+#project{background:var(--bg2);}
+.proj-banner{background:linear-gradient(135deg,rgba(6,214,160,0.06),rgba(34,211,238,0.05),rgba(167,139,250,0.05));border:1px solid rgba(6,214,160,0.12);border-radius:26px;padding:2.5rem;margin-bottom:1.8rem;}
 .proj-banner h3{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;margin-bottom:1rem;}
 .proj-banner p{line-height:1.9;color:var(--muted);font-size:.96rem;}
-.flow-wrap{margin-top:1.4rem;background:#fff;border-radius:14px;padding:1.1rem 1.4rem;border:1px solid var(--border);}
+.flow-wrap{margin-top:1.4rem;background:var(--card);border-radius:14px;padding:1.1rem 1.4rem;border:1px solid var(--border);}
 .flow-lbl{font-size:.7rem;font-weight:700;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:.7rem;}
 .flow-steps{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center;}
-.fs{background:rgba(102,126,234,.08);border:1px solid rgba(102,126,234,.18);border-radius:7px;padding:.32rem .75rem;font-size:.78rem;font-weight:600;color:var(--purple);}
+.fs{background:rgba(6,214,160,0.1);border:1px solid rgba(6,214,160,0.2);border-radius:7px;padding:.32rem .75rem;font-size:.78rem;font-weight:600;color:var(--accent);}
 .fa{color:var(--muted);}
 .proj-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
-.pc{background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:1.5rem;transition:all .3s;}
+.pc{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:1.5rem;transition:all .3s;}
 .pc:hover{transform:translateY(-5px);}
 .pc-ico{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:.9rem;}
 .pc h4{font-family:'Syne',sans-serif;font-size:.97rem;font-weight:700;margin-bottom:.35rem;}
 .pc p{font-size:.83rem;color:var(--muted);line-height:1.7;}
-.pc.c1:hover{border-color:#667EEA;box-shadow:0 12px 40px rgba(102,126,234,.1);}
-.pc.c1 .pc-ico{background:rgba(102,126,234,.1);}
-.pc.c2:hover{border-color:#F5576C;box-shadow:0 12px 40px rgba(245,87,108,.1);}
-.pc.c2 .pc-ico{background:rgba(245,87,108,.1);}
-.pc.c3:hover{border-color:#43E97B;box-shadow:0 12px 40px rgba(67,233,123,.1);}
-.pc.c3 .pc-ico{background:rgba(67,233,123,.1);}
-.pc.c4:hover{border-color:#4FACFE;box-shadow:0 12px 40px rgba(79,172,254,.1);}
-.pc.c4 .pc-ico{background:rgba(79,172,254,.1);}
-.pc.c5:hover{border-color:#FA709A;box-shadow:0 12px 40px rgba(250,112,154,.1);}
-.pc.c5 .pc-ico{background:rgba(250,112,154,.1);}
-.pc.c6:hover{border-color:#A18CD1;box-shadow:0 12px 40px rgba(161,140,209,.1);}
-.pc.c6 .pc-ico{background:rgba(161,140,209,.1);}
+.pc.c1:hover{border-color:rgba(6,214,160,0.3);box-shadow:0 12px 40px rgba(6,214,160,0.08);}
+.pc.c1 .pc-ico{background:rgba(6,214,160,0.1);}
+.pc.c2:hover{border-color:rgba(244,114,182,0.3);box-shadow:0 12px 40px rgba(244,114,182,0.08);}
+.pc.c2 .pc-ico{background:rgba(244,114,182,0.1);}
+.pc.c3:hover{border-color:rgba(34,211,238,0.3);box-shadow:0 12px 40px rgba(34,211,238,0.08);}
+.pc.c3 .pc-ico{background:rgba(34,211,238,0.1);}
+.pc.c4:hover{border-color:rgba(251,191,36,0.3);box-shadow:0 12px 40px rgba(251,191,36,0.08);}
+.pc.c4 .pc-ico{background:rgba(251,191,36,0.1);}
+.pc.c5:hover{border-color:rgba(167,139,250,0.3);box-shadow:0 12px 40px rgba(167,139,250,0.08);}
+.pc.c5 .pc-ico{background:rgba(167,139,250,0.1);}
+.pc.c6:hover{border-color:rgba(244,114,182,0.3);box-shadow:0 12px 40px rgba(244,114,182,0.08);}
+.pc.c6 .pc-ico{background:rgba(244,114,182,0.1);}
 
 /* TOOLS */
 #tools{background:var(--bg);}
 .tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
-.tc{background:#fff;border:1.5px solid var(--border);border-radius:20px;padding:1.7rem 1.3rem;text-align:center;transition:all .3s;position:relative;overflow:hidden;}
-.tc::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .3s;}
-.tc:hover::before{opacity:1;}
-.tc:hover{transform:translateY(-6px);border-color:transparent;}
-.tc.t1:hover{box-shadow:0 16px 50px rgba(102,126,234,.12);border-color:#667EEA33;}
-.tc.t2:hover{box-shadow:0 16px 50px rgba(245,87,108,.1);border-color:#F5576C33;}
-.tc.t3:hover{box-shadow:0 16px 50px rgba(67,233,123,.1);border-color:#43E97B33;}
-.tc.t4:hover{box-shadow:0 16px 50px rgba(79,172,254,.12);border-color:#4FACFE33;}
-.tc.t5:hover{box-shadow:0 16px 50px rgba(250,112,154,.1);border-color:#FA709A33;}
-.tc.t6:hover{box-shadow:0 16px 50px rgba(161,140,209,.1);border-color:#A18CD133;}
-.tc.t7:hover{box-shadow:0 16px 50px rgba(67,233,123,.08);border-color:#43E97B33;}
-.tc.t8:hover{box-shadow:0 16px 50px rgba(245,87,108,.08);border-color:#F5576C33;}
-.tc-emoji{font-size:2.1rem;margin-bottom:.75rem;display:block;position:relative;z-index:1;}
+.tc{background:var(--card);border:1.5px solid var(--border);border-radius:20px;padding:1.7rem 1.3rem;text-align:center;transition:all .3s;position:relative;overflow:hidden;}
+.tc:hover{transform:translateY(-6px);}
+.tc.t1:hover{border-color:rgba(6,214,160,0.3);box-shadow:0 16px 50px rgba(6,214,160,0.1);}
+.tc.t2:hover{border-color:rgba(251,191,36,0.3);box-shadow:0 16px 50px rgba(251,191,36,0.08);}
+.tc.t3:hover{border-color:rgba(34,211,238,0.3);box-shadow:0 16px 50px rgba(34,211,238,0.1);}
+.tc.t4:hover{border-color:rgba(244,114,182,0.3);box-shadow:0 16px 50px rgba(244,114,182,0.08);}
+.tc.t5:hover{border-color:rgba(167,139,250,0.3);box-shadow:0 16px 50px rgba(167,139,250,0.1);}
+.tc.t6:hover{border-color:rgba(34,211,238,0.3);box-shadow:0 16px 50px rgba(34,211,238,0.08);}
+.tc.t7:hover{border-color:rgba(6,214,160,0.3);box-shadow:0 16px 50px rgba(6,214,160,0.08);}
+.tc.t8:hover{border-color:rgba(251,191,36,0.3);box-shadow:0 16px 50px rgba(251,191,36,0.08);}
+.tc-emoji{font-size:2.1rem;margin-bottom:.75rem;display:block;position:relative;z-index:1;transition:transform .25s;}
 .tc-name{font-family:'Syne',sans-serif;font-size:.97rem;font-weight:700;margin-bottom:.3rem;position:relative;z-index:1;}
 .tc-desc{font-size:.77rem;color:var(--muted);line-height:1.6;position:relative;z-index:1;}
+.tc-link{display:inline-flex;align-items:center;gap:.3rem;margin-top:.7rem;font-size:.72rem;font-weight:700;color:var(--accent);opacity:.7;transition:opacity .2s;position:relative;z-index:1;text-decoration:none;}
+.tc-link:hover{opacity:1;}
+.tc-link svg{width:12px;height:12px;}
 
 /* SKILLS */
-#skills{background:#fff;}
+#skills{background:var(--bg2);}
 .skills-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;}
 .skill-block{margin-bottom:1.8rem;}
 .skill-block h4,.tags-area h4{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);}
 .skill-row{margin-bottom:1rem;}
 .skill-top{display:flex;justify-content:space-between;margin-bottom:.42rem;font-size:.87rem;font-weight:600;}
 .skill-pct{color:var(--muted);font-size:.78rem;font-weight:500;}
-.skill-bar{height:7px;background:var(--bg);border-radius:100px;overflow:hidden;border:1px solid var(--border);}
+.skill-bar{height:7px;background:rgba(255,255,255,0.04);border-radius:100px;overflow:hidden;border:1px solid var(--border);}
 .skill-fill{height:100%;border-radius:100px;width:0;transition:width 1.6s cubic-bezier(.25,.46,.45,.94);}
 .sf1{background:var(--g1);}
 .sf2{background:var(--g2);}
@@ -181,52 +207,53 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .tags-wrap{display:flex;flex-wrap:wrap;gap:.45rem;}
 .t-tag{padding:.32rem .8rem;border-radius:100px;font-size:.76rem;font-weight:600;border:1.5px solid transparent;transition:all .2s;}
 .t-tag:hover{transform:translateY(-2px);}
-.tt1{background:rgba(102,126,234,.08);color:#667EEA;border-color:rgba(102,126,234,.18);}
-.tt2{background:rgba(245,87,108,.08);color:#E04060;border-color:rgba(245,87,108,.18);}
-.tt3{background:rgba(79,172,254,.08);color:#2B8EE0;border-color:rgba(79,172,254,.18);}
-.tt4{background:rgba(67,233,123,.1);color:#1A9E58;border-color:rgba(67,233,123,.18);}
-.tt5{background:rgba(250,112,154,.08);color:#D04070;border-color:rgba(250,112,154,.18);}
+.tt1{background:rgba(6,214,160,0.08);color:var(--accent);border-color:rgba(6,214,160,0.2);}
+.tt2{background:rgba(244,114,182,0.08);color:var(--pink);border-color:rgba(244,114,182,0.2);}
+.tt3{background:rgba(34,211,238,0.08);color:var(--accent2);border-color:rgba(34,211,238,0.2);}
+.tt4{background:rgba(251,191,36,0.1);color:var(--amber);border-color:rgba(251,191,36,0.2);}
+.tt5{background:rgba(167,139,250,0.08);color:var(--violet);border-color:rgba(167,139,250,0.2);}
 
 /* RESULTS */
 #results{background:var(--bg);}
 .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:1.8rem;}
-.stat-c{background:#fff;border:1px solid var(--border);border-radius:20px;padding:2rem;text-align:center;}
+.stat-c{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:2rem;text-align:center;transition:all .3s;}
+.stat-c:hover{border-color:var(--border2);transform:translateY(-4px);}
 .stat-n{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;line-height:1;}
 .stat-l{font-size:.82rem;color:var(--muted);margin-top:.4rem;font-weight:500;}
 .findings{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
-.fc{background:#fff;border:1px solid var(--border);border-radius:20px;padding:1.5rem;display:flex;gap:.9rem;transition:all .3s;}
+.fc{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:1.5rem;display:flex;gap:.9rem;transition:all .3s;}
 .fc:hover{transform:translateY(-4px);}
-.fc:nth-child(1):hover{border-color:#667EEA44;box-shadow:0 12px 40px rgba(102,126,234,.08);}
-.fc:nth-child(2):hover{border-color:#4FACFE44;box-shadow:0 12px 40px rgba(79,172,254,.08);}
-.fc:nth-child(3):hover{border-color:#F5576C44;box-shadow:0 12px 40px rgba(245,87,108,.08);}
-.fc:nth-child(4):hover{border-color:#43E97B44;box-shadow:0 12px 40px rgba(67,233,123,.08);}
+.fc:nth-child(1):hover{border-color:rgba(6,214,160,0.3);box-shadow:0 12px 40px rgba(6,214,160,0.08);}
+.fc:nth-child(2):hover{border-color:rgba(34,211,238,0.3);box-shadow:0 12px 40px rgba(34,211,238,0.08);}
+.fc:nth-child(3):hover{border-color:rgba(244,114,182,0.3);box-shadow:0 12px 40px rgba(244,114,182,0.08);}
+.fc:nth-child(4):hover{border-color:rgba(251,191,36,0.3);box-shadow:0 12px 40px rgba(251,191,36,0.08);}
 .fc-ico{width:40px;height:40px;border-radius:11px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.15rem;}
-.fi1{background:rgba(102,126,234,.1);}
-.fi2{background:rgba(79,172,254,.1);}
-.fi3{background:rgba(245,87,108,.1);}
-.fi4{background:rgba(67,233,123,.1);}
+.fi1{background:rgba(6,214,160,0.1);}
+.fi2{background:rgba(34,211,238,0.1);}
+.fi3{background:rgba(244,114,182,0.1);}
+.fi4{background:rgba(251,191,36,0.1);}
 .fc h4{font-family:'Syne',sans-serif;font-size:.93rem;font-weight:700;margin-bottom:.3rem;}
 .fc p{font-size:.81rem;color:var(--muted);line-height:1.7;}
 
 /* FUTURE */
-#future{background:#fff;}
+#future{background:var(--bg2);}
 .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
 .fwc{border-radius:20px;padding:1.8rem;display:flex;gap:1.1rem;align-items:flex-start;transition:all .3s;border:1.5px solid transparent;}
 .fwc:hover{transform:translateY(-5px);}
-.fwc.fw1{background:linear-gradient(135deg,rgba(102,126,234,.07),rgba(118,75,162,.07));border-color:rgba(102,126,234,.15);}
-.fwc.fw2{background:linear-gradient(135deg,rgba(245,87,108,.07),rgba(240,147,251,.05));border-color:rgba(245,87,108,.15);}
-.fwc.fw3{background:linear-gradient(135deg,rgba(79,172,254,.07),rgba(0,242,254,.05));border-color:rgba(79,172,254,.15);}
-.fwc.fw4{background:linear-gradient(135deg,rgba(67,233,123,.07),rgba(56,249,215,.05));border-color:rgba(67,233,123,.15);}
-.fwc:hover.fw1{box-shadow:0 14px 45px rgba(102,126,234,.1);}
-.fwc:hover.fw2{box-shadow:0 14px 45px rgba(245,87,108,.08);}
-.fwc:hover.fw3{box-shadow:0 14px 45px rgba(79,172,254,.1);}
-.fwc:hover.fw4{box-shadow:0 14px 45px rgba(67,233,123,.08);}
-.fw-num{font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;opacity:.12;line-height:1;flex-shrink:0;}
+.fwc.fw1{background:linear-gradient(135deg,rgba(6,214,160,0.06),rgba(34,211,238,0.04));border-color:rgba(6,214,160,0.15);}
+.fwc.fw2{background:linear-gradient(135deg,rgba(244,114,182,0.06),rgba(251,191,36,0.04));border-color:rgba(244,114,182,0.15);}
+.fwc.fw3{background:linear-gradient(135deg,rgba(34,211,238,0.06),rgba(167,139,250,0.04));border-color:rgba(34,211,238,0.15);}
+.fwc.fw4{background:linear-gradient(135deg,rgba(251,191,36,0.06),rgba(6,214,160,0.04));border-color:rgba(251,191,36,0.15);}
+.fwc:hover.fw1{box-shadow:0 14px 45px rgba(6,214,160,0.08);}
+.fwc:hover.fw2{box-shadow:0 14px 45px rgba(244,114,182,0.06);}
+.fwc:hover.fw3{box-shadow:0 14px 45px rgba(34,211,238,0.08);}
+.fwc:hover.fw4{box-shadow:0 14px 45px rgba(251,191,36,0.06);}
+.fw-num{font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;opacity:.1;line-height:1;flex-shrink:0;}
 .fwc h4{font-family:'Syne',sans-serif;font-size:.97rem;font-weight:700;margin-bottom:.35rem;}
 .fwc p{font-size:.83rem;color:var(--muted);line-height:1.7;}
 
 /* FOOTER */
-footer{background:var(--text);color:rgba(255,255,255,.45);text-align:center;padding:2.2rem;font-size:.83rem;}
+footer{background:#070A12;border-top:1px solid var(--border);color:var(--muted);text-align:center;padding:2.2rem;font-size:.83rem;}
 footer span{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;}
 
 /* ANIMATIONS */
@@ -267,19 +294,21 @@ footer span{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-
 
 <!-- HERO -->
 <section id="hero">
+  <div class="grid-bg"></div>
   <div class="orb orb1"></div>
   <div class="orb orb2"></div>
   <div class="orb orb3"></div>
+  <div class="orb orb4"></div>
   <div class="chip"><span class="chip-dot"></span> SNPIT Bardoli · Semester 8 · CSE Department</div>
   <h1 class="hero-name">Krushi Dobariya</h1>
   <p class="hero-sub">Data Analyst Intern @ <strong>Grow Solutions LLP</strong></p>
   <p class="hero-desc">Worked on mobile app monetization — analyzing onboarding flows, optimizing paywalls, studying in-app purchases, and building ad revenue strategies using real industry tools.</p>
   <div class="hero-pills">
-    <span class="pill pill-1">GA4</span>
-    <span class="pill pill-2">Firebase</span>
-    <span class="pill pill-3">AdMob</span>
-    <span class="pill pill-4">Python</span>
-    <span class="pill pill-5">App Store Connect</span>
+    <a href="https://analytics.google.com" target="_blank" class="pill pill-1">GA4 ↗</a>
+    <a href="https://firebase.google.com" target="_blank" class="pill pill-2">Firebase ↗</a>
+    <a href="https://admob.google.com" target="_blank" class="pill pill-3">AdMob ↗</a>
+    <a href="https://python.org" target="_blank" class="pill pill-4">Python ↗</a>
+    <a href="https://appstoreconnect.apple.com" target="_blank" class="pill pill-5">App Store Connect ↗</a>
   </div>
   <div class="hero-btns">
     <a href="#apps" class="btn-main">Apps I Worked On ↓</a>
@@ -291,13 +320,13 @@ footer span{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-
 <section id="internship" class="pad">
   <div class="container">
     <div class="sec-head reveal">
-      <div class="sec-tag tp">📋 Internship Details</div>
-      <h2 class="sec-title">Where It All <span class="gp">Happened</span></h2>
+      <div class="sec-tag ta">📋 Internship Details</div>
+      <h2 class="sec-title">Where It All <span class="ga">Happened</span></h2>
     </div>
     <div class="int-grid">
       <div class="int-card reveal">
         <div class="int-card-head">
-          <div class="ic-ico ici-p">🎓</div>
+          <div class="ic-ico ici-a">🎓</div>
           <h3>Student Information</h3>
         </div>
         <div class="irow"><div class="irow-ic">👤</div><div><div class="irow-lbl">Name</div><div class="irow-val">Krushi Dobariya</div></div></div>
@@ -309,11 +338,11 @@ footer span{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-
       </div>
       <div class="int-card reveal">
         <div class="int-card-head">
-          <div class="ic-ico ici-pk">🏢</div>
+          <div class="ic-ico ici-p">🏢</div>
           <h3>Company Information</h3>
         </div>
-        <div class="irow"><div class="irow-ic">🏷️</div><div><div class="irow-lbl">Company</div><div class="irow-val">Grow Solutions LLP</div></div></div>
-        <div class="irow"><div class="irow-ic">🌐</div><div><div class="irow-lbl">Website</div><div class="irow-val">growsolutions.in</div></div></div>
+        <div class="irow"><div class="irow-ic">🏷️</div><div><div class="irow-lbl">Company</div><div class="irow-val"><a href="https://growsolutions.in" target="_blank" style="color:var(--accent);text-decoration:none;">Grow Solutions LLP ↗</a></div></div></div>
+        <div class="irow"><div class="irow-ic">🌐</div><div><div class="irow-lbl">Website</div><div class="irow-val"><a href="https://growsolutions.in" target="_blank" style="color:var(--accent2);text-decoration:none;">growsolutions.in ↗</a></div></div></div>
         <div class="irow"><div class="irow-ic">🔬</div><div><div class="irow-lbl">Training Domain</div><div class="irow-val">Data Analytics & Market Research</div></div></div>
         <div class="irow"><div class="irow-ic">📆</div><div><div class="irow-lbl">Duration</div><div class="irow-val">3 Months · Dec 2, 2025 – Feb 2026</div></div></div>
         <div class="irow"><div class="irow-ic">🖥️</div><div><div class="irow-lbl">Mode</div><div class="irow-val">Offline Internship</div></div></div>
@@ -327,44 +356,60 @@ footer span{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-
 <section id="apps" class="pad">
   <div class="container">
     <div class="sec-head reveal">
-      <div class="sec-tag tb">📱 Grow Solutions LLP</div>
-      <h2 class="sec-title">iOS Apps I <span class="gb">Worked On</span></h2>
+      <div class="sec-tag tc-tag">📱 Grow Solutions LLP</div>
+      <h2 class="sec-title">iOS Apps I <span class="gc">Worked On</span></h2>
     </div>
     <div class="apps-intro reveal">
       <div class="ai-icon">🚀</div>
       <p>During my internship at <strong>Grow Solutions LLP</strong>, I worked in the <strong>Monetization Department</strong> and analyzed data for these 5 iOS apps. I used GA4, Firebase & App Store Connect to study their performance, onboarding flows, in-app purchase behavior, and revenue metrics.</p>
     </div>
     <div class="apps-grid">
-      <div class="app-card reveal">
-        <span class="app-emoji">📺</span>
-        <div class="app-name">Universal TV Remote</div>
-        <div class="app-desc">Smart Control for all TVs & devices</div>
-        <span class="app-badge ab1">iOS App</span>
-      </div>
-      <div class="app-card reveal">
-        <span class="app-emoji">🧹</span>
-        <div class="app-name">Clean Up</div>
-        <div class="app-desc">Delete Similar Photos & Free Storage</div>
-        <span class="app-badge ab2">iOS App</span>
-      </div>
-      <div class="app-card reveal">
-        <span class="app-emoji">🗺️</span>
-        <div class="app-name">GPS Map</div>
-        <div class="app-desc">Photo Location & Navigation Tool</div>
-        <span class="app-badge ab3">iOS App</span>
-      </div>
-      <div class="app-card reveal">
-        <span class="app-emoji">⌨️</span>
-        <div class="app-name">Font & Emoji Keyboard</div>
-        <div class="app-desc">Custom Keyboard with Fonts & Emojis</div>
-        <span class="app-badge ab4">iOS App</span>
-      </div>
-      <div class="app-card reveal">
-        <span class="app-emoji">✍️</span>
-        <div class="app-name">Font (Cool)</div>
-        <div class="app-desc">Cool Fonts & Text Style App</div>
-        <span class="app-badge ab5">iOS App</span>
-      </div>
+
+      <a href="https://apps.apple.com/app/universal-tv-remote-smart-control/id6739236371" target="_blank" class="link-card reveal">
+        <div class="app-card">
+          <span class="app-emoji">📺</span>
+          <div class="app-name">Universal TV Remote</div>
+          <div class="app-desc">Smart Control for all TVs & devices</div>
+          <span class="app-badge ab1">iOS App</span>
+        </div>
+      </a>
+
+      <a href="https://apps.apple.com/app/clean-up-delete-similar-photos/id6739309139" target="_blank" class="link-card reveal">
+        <div class="app-card">
+          <span class="app-emoji">🧹</span>
+          <div class="app-name">Clean Up</div>
+          <div class="app-desc">Delete Similar Photos & Free Storage</div>
+          <span class="app-badge ab2">iOS App</span>
+        </div>
+      </a>
+
+      <a href="https://apps.apple.com/app/gps-map-photo-location/id6739427195" target="_blank" class="link-card reveal">
+        <div class="app-card">
+          <span class="app-emoji">🗺️</span>
+          <div class="app-name">GPS Map</div>
+          <div class="app-desc">Photo Location & Navigation Tool</div>
+          <span class="app-badge ab3">iOS App</span>
+        </div>
+      </a>
+
+      <a href="https://apps.apple.com/app/font-emoji-keyboard/id6739325383" target="_blank" class="link-card reveal">
+        <div class="app-card">
+          <span class="app-emoji">⌨️</span>
+          <div class="app-name">Font & Emoji Keyboard</div>
+          <div class="app-desc">Custom Keyboard with Fonts & Emojis</div>
+          <span class="app-badge ab4">iOS App</span>
+        </div>
+      </a>
+
+      <a href="https://apps.apple.com/app/font-cool-text-style/id6739359238" target="_blank" class="link-card reveal">
+        <div class="app-card">
+          <span class="app-emoji">✍️</span>
+          <div class="app-name">Font (Cool)</div>
+          <div class="app-desc">Cool Fonts & Text Style App</div>
+          <span class="app-badge ab5">iOS App</span>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
@@ -373,8 +418,8 @@ footer span{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-
 <section id="project" class="pad">
   <div class="container">
     <div class="sec-head reveal">
-      <div class="sec-tag tpk">🚀 Project Work</div>
-      <h2 class="sec-title">App Revenue <span class="gpk">Optimization</span></h2>
+      <div class="sec-tag tp">🚀 Project Work</div>
+      <h2 class="sec-title">App Revenue <span class="gp">Optimization</span></h2>
     </div>
     <div class="proj-banner reveal">
       <h3>📱 App Revenue Optimization & Monetization</h3>
@@ -409,18 +454,83 @@ footer span{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-
 <section id="tools" class="pad">
   <div class="container">
     <div class="sec-head reveal">
-      <div class="sec-tag tg">🔧 Tech Stack</div>
-      <h2 class="sec-title">Tools & <span class="gg">Technologies</span></h2>
+      <div class="sec-tag tam">🔧 Tech Stack</div>
+      <h2 class="sec-title">Tools & <span class="gam">Technologies</span></h2>
     </div>
     <div class="tools-grid">
-      <div class="tc t1 reveal"><span class="tc-emoji">📈</span><div class="tc-name">Google Analytics 4</div><div class="tc-desc">Tracked user events, sessions, funnel drops & behavioral flow through the app.</div></div>
-      <div class="tc t2 reveal"><span class="tc-emoji">🔥</span><div class="tc-name">Firebase</div><div class="tc-desc">Real-time event tracking, crash reporting & user property analysis for iOS apps.</div></div>
-      <div class="tc t3 reveal"><span class="tc-emoji">🍎</span><div class="tc-name">App Store Connect</div><div class="tc-desc">Monitored iOS downloads, in-app purchases & subscription analytics for all 5 apps.</div></div>
-      <div class="tc t4 reveal"><span class="tc-emoji">💵</span><div class="tc-name">Google AdMob</div><div class="tc-desc">Created & managed Banner, Interstitial, Rewarded & Native ad units for revenue.</div></div>
-      <div class="tc t5 reveal"><span class="tc-emoji">🐍</span><div class="tc-name">Python</div><div class="tc-desc">Data manipulation and analysis using NumPy and Pandas libraries.</div></div>
-      <div class="tc t6 reveal"><span class="tc-emoji">🔢</span><div class="tc-name">NumPy</div><div class="tc-desc">Numerical computation and array operations for efficient data processing.</div></div>
-      <div class="tc t7 reveal"><span class="tc-emoji">🐼</span><div class="tc-name">Pandas</div><div class="tc-desc">Data cleaning, transformation & analysis using powerful dataframe operations.</div></div>
-      <div class="tc t8 reveal"><span class="tc-emoji">📊</span><div class="tc-name">Data Visualization</div><div class="tc-desc">Created charts & dashboards to present insights to the monetization team.</div></div>
+
+      <a href="https://analytics.google.com" target="_blank" class="tool-link reveal">
+        <div class="tc t1">
+          <span class="tc-emoji">📈</span>
+          <div class="tc-name">Google Analytics 4</div>
+          <div class="tc-desc">Tracked user events, sessions, funnel drops & behavioral flow through the app.</div>
+          <span class="tc-link">Visit GA4 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://firebase.google.com" target="_blank" class="tool-link reveal">
+        <div class="tc t2">
+          <span class="tc-emoji">🔥</span>
+          <div class="tc-name">Firebase</div>
+          <div class="tc-desc">Real-time event tracking, crash reporting & user property analysis for iOS apps.</div>
+          <span class="tc-link">Visit Firebase <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://appstoreconnect.apple.com" target="_blank" class="tool-link reveal">
+        <div class="tc t3">
+          <span class="tc-emoji">🍎</span>
+          <div class="tc-name">App Store Connect</div>
+          <div class="tc-desc">Monitored iOS downloads, in-app purchases & subscription analytics for all 5 apps.</div>
+          <span class="tc-link">Visit ASC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://admob.google.com" target="_blank" class="tool-link reveal">
+        <div class="tc t4">
+          <span class="tc-emoji">💵</span>
+          <div class="tc-name">Google AdMob</div>
+          <div class="tc-desc">Created & managed Banner, Interstitial, Rewarded & Native ad units for revenue.</div>
+          <span class="tc-link">Visit AdMob <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://python.org" target="_blank" class="tool-link reveal">
+        <div class="tc t5">
+          <span class="tc-emoji">🐍</span>
+          <div class="tc-name">Python</div>
+          <div class="tc-desc">Data manipulation and analysis using NumPy and Pandas libraries.</div>
+          <span class="tc-link">Visit Python <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://numpy.org" target="_blank" class="tool-link reveal">
+        <div class="tc t6">
+          <span class="tc-emoji">🔢</span>
+          <div class="tc-name">NumPy</div>
+          <div class="tc-desc">Numerical computation and array operations for efficient data processing.</div>
+          <span class="tc-link">Visit NumPy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://pandas.pydata.org" target="_blank" class="tool-link reveal">
+        <div class="tc t7">
+          <span class="tc-emoji">🐼</span>
+          <div class="tc-name">Pandas</div>
+          <div class="tc-desc">Data cleaning, transformation & analysis using powerful dataframe operations.</div>
+          <span class="tc-link">Visit Pandas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://matplotlib.org" target="_blank" class="tool-link reveal">
+        <div class="tc t8">
+          <span class="tc-emoji">📊</span>
+          <div class="tc-name">Data Visualization</div>
+          <div class="tc-desc">Created charts & dashboards using Matplotlib to present insights to the monetization team.</div>
+          <span class="tc-link">Visit Matplotlib <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
@@ -429,8 +539,8 @@ footer span{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-
 <section id="skills" class="pad">
   <div class="container">
     <div class="sec-head reveal">
-      <div class="sec-tag tp">💡 Skillset</div>
-      <h2 class="sec-title">My <span class="gp">Skills</span></h2>
+      <div class="sec-tag ta">💡 Skillset</div>
+      <h2 class="sec-title">My <span class="ga">Skills</span></h2>
     </div>
     <div class="skills-wrap">
       <div class="reveal">
@@ -486,13 +596,13 @@ footer span{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-
 <section id="results" class="pad">
   <div class="container">
     <div class="sec-head reveal">
-      <div class="sec-tag tg">🏆 Achievements</div>
-      <h2 class="sec-title">Key <span class="gg">Results</span></h2>
+      <div class="sec-tag tam">🏆 Achievements</div>
+      <h2 class="sec-title">Key <span class="gam">Results</span></h2>
     </div>
     <div class="stats-row">
-      <div class="stat-c reveal"><div class="stat-n gp">5</div><div class="stat-l">iOS Apps Analyzed</div></div>
-      <div class="stat-c reveal"><div class="stat-n gpk">4</div><div class="stat-l">Ad Unit Types Implemented</div></div>
-      <div class="stat-c reveal"><div class="stat-n gb">3</div><div class="stat-l">Months Real Industry Work</div></div>
+      <div class="stat-c reveal"><div class="stat-n ga">5</div><div class="stat-l">iOS Apps Analyzed</div></div>
+      <div class="stat-c reveal"><div class="stat-n gp">4</div><div class="stat-l">Ad Unit Types Implemented</div></div>
+      <div class="stat-c reveal"><div class="stat-n gc">3</div><div class="stat-l">Months Real Industry Work</div></div>
     </div>
     <div class="findings">
       <div class="fc reveal"><div class="fc-ico fi1">📉</div><div><h4>Onboarding Drop-off Identified</h4><p>Pinpointed exact steps where users dropped off and proposed simplified permission screens to reduce friction and boost retention.</p></div></div>
@@ -507,8 +617,8 @@ footer span{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-
 <section id="future" class="pad">
   <div class="container">
     <div class="sec-head reveal">
-      <div class="sec-tag to">🔮 What's Next</div>
-      <h2 class="sec-title">Future <span class="gpk">Work</span></h2>
+      <div class="sec-tag tv">🔮 What's Next</div>
+      <h2 class="sec-title">Future <span class="gv">Work</span></h2>
     </div>
     <div class="future-grid">
       <div class="fwc fw1 reveal"><div class="fw-num">01</div><div><h4>A/B Testing Implementation</h4><p>Compare different onboarding flows and paywall designs using A/B tests to find which versions drive the highest conversions and revenue.</p></div></div>
